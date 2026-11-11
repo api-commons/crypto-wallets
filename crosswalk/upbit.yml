@@ -1,7 +1,7 @@
 provider: upbit
 apis_io: https://apis.io/providers/upbit/
 context: crypto-wallets
-generated: '2026-11-10'
+generated: '2026-11-11'
 concepts:
   wallet:
     path_segment:

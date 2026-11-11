@@ -18,7 +18,7 @@ generated. Every number below is a count of providers.
 | wallet_transaction | 54 | 52 | status 67%, id 64%, direction 60%, tx_hash 54% | transactions 41, transfers 19, transfer 14, transaction 10 |
 | token | 27 | 22 | symbol 64%, name 59% | tokens 17, token 15, assets 3, supported_assets 1 |
 
-Cohort: 345 providers with harvested OpenAPI, 75 crosswalks. Of the providers exposing a wallet: 52% create, 76% list, 45% fetch, 11% update, 5% delete. Generated 2026-11-10 by build.py.
+Cohort: 345 providers with harvested OpenAPI, 75 crosswalks. Of the providers exposing a wallet: 52% create, 76% list, 45% fetch, 11% update, 5% delete. Generated 2026-11-11 by build.py.
 <!-- /commons:summary -->
 
 Shares are of the providers with a readable resource schema for that concept. The

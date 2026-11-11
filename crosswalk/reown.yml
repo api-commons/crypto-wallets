@@ -1,7 +1,7 @@
 provider: reown
 apis_io: https://apis.io/providers/reown/
 context: crypto-wallets
-generated: '2026-11-10'
+generated: '2026-11-11'
 concepts:
   wallet:
     path_segment:

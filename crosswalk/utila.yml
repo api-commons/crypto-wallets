@@ -1,0 +1,46 @@
+provider: utila
+apis_io: https://apis.io/providers/utila/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - vaults
+    properties:
+      name:
+      - name
+      - displayName
+      created_at: createTime
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/utila-v2-openapi-original.json#GET /v2/vaults
+    - openapi/_original/utila-v2-openapi-original.json#GET /v2/vaults/{vault_id}
+  wallet_address:
+    path_segment:
+    - addresses
+    properties:
+      address: address
+      chain: network
+      format:
+      - format
+      - type
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/utila-v2-openapi-original.json#GET /v2/vaults/{vault_id}/wallets/{wallet_id}/addresses
+    - openapi/_original/utila-v2-openapi-original.json#GET /v2/vaults/{vault_id}/wallets/{wallet_id}/addresses/{address_id}
+    - openapi/_original/utila-v2-openapi-original.json#POST /v2/vaults/{vault_id}/wallets/{wallet_id}/addresses
+  wallet_transaction:
+    path_segment:
+    - transactions
+    properties:
+      status: state
+      direction:
+      - type
+      - direction
+      tx_hash: hash
+      created_at: createTime
+      chain: network
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/utila-v2-openapi-original.json#GET /v2/vaults/{vault_id}/transactions
+    - openapi/_original/utila-v2-openapi-original.json#GET /v2/vaults/{vault_id}/transactions/{transaction_id}

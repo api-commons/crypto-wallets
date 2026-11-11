@@ -1,0 +1,24 @@
+provider: btse
+apis_io: https://apis.io/providers/btse/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallet
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/btse-futures-legacy-openapi.yml#GET /api/v2.3/user/wallet
+    - openapi/_original/futures-rest.openapi.yaml#GET /api/v2.3/user/wallet
+  wallet_transaction:
+    path_segment:
+    - transfer
+    properties:
+      asset: currency
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/btse-futures-legacy-openapi.yml#POST /api/v2.3/subaccount/wallet/transfer
+    - openapi/_original/btse-futures-legacy-openapi.yml#POST /api/v2.3/user/wallet/transfer
+    - openapi/_original/futures-rest.openapi.yaml#POST /api/v2.3/subaccount/wallet/transfer
+    - openapi/_original/futures-rest.openapi.yaml#POST /api/v2.3/user/wallet/transfer

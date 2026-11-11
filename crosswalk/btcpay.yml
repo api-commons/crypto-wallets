@@ -1,0 +1,26 @@
+provider: btcpay
+apis_io: https://apis.io/providers/btcpay/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallet
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/btcpay-openapi.json#GET /api/v1/stores/{storeId}/payment-methods/{paymentMethodId}/wallet
+  wallet_transaction:
+    path_segment:
+    - transactions
+    properties:
+      status: status
+      tx_hash: transactionHash
+      amount: amount
+      metadata: labels
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/btcpay-openapi.json#GET /api/v1/stores/{storeId}/payment-methods/{paymentMethodId}/wallet/transactions
+    - openapi/_original/btcpay-openapi.json#GET /api/v1/stores/{storeId}/payment-methods/{paymentMethodId}/wallet/transactions/{transactionId}
+    - openapi/_original/btcpay-openapi.json#PATCH /api/v1/stores/{storeId}/payment-methods/{paymentMethodId}/wallet/transactions/{transactionId}
+    - openapi/_original/btcpay-openapi.json#POST /api/v1/stores/{storeId}/payment-methods/{paymentMethodId}/wallet/transactions

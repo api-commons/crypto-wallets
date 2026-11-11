@@ -1,0 +1,41 @@
+provider: surf
+apis_io: https://apis.io/providers/surf/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallet
+    properties:
+      address: address
+      name: label
+      chain: chain
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/surf-openapi-original.json#GET /gateway/v1/search/wallet
+  wallet_transaction:
+    path_segment:
+    - transfers
+    properties:
+      tx_hash: tx_hash
+      amount: amount
+      asset:
+      - symbol
+      - token_symbol
+      from_address: from_address
+      to_address: to_address
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/surf-openapi-original.json#GET /gateway/v1/token/transfers
+    - openapi/_original/surf-openapi-original.json#GET /gateway/v1/wallet/transfers
+  token:
+    path_segment:
+    - token
+    properties:
+      symbol: symbol
+      contract_address: address
+      decimals: decimals
+      chain: chain
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/surf-openapi-original.json#GET /gateway/v1/search/token

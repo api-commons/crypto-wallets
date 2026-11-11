@@ -1,0 +1,13 @@
+provider: 2s-io
+apis_io: https://apis.io/providers/2s-io/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallet
+    properties:
+      name: title
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/2s-io-openapi.json#GET /api/predict/wallet

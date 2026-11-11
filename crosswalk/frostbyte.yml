@@ -1,0 +1,27 @@
+provider: frostbyte
+apis_io: https://apis.io/providers/frostbyte/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallet
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/frostbyte-agent-gateway-openapi.yml#POST /v1/frostbyte-wallet/v1/wallet/send
+  wallet_balance:
+    path_segment:
+    - balance
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/frostbyte-agent-gateway-openapi.yml#GET /v1/agent-wallet/api/wallets/{id}/balance
+    - openapi/_original/frostbyte-agent-gateway-openapi.yml#GET /v1/frostbyte-wallet/v1/wallet/balance/{address}
+  token:
+    path_segment:
+    - tokens
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/frostbyte-agent-gateway-openapi.yml#GET /v1/onchain-analytics/api/tokens/{address}

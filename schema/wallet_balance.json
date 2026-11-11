@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/crypto-wallets/main/schema/wallet_balance.json",
+  "title": "Wallet Balance",
+  "description": "The common wallet_balance in Crypto Wallets, distilled from 14 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "asset": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.5,
+      "x-commons-providers": 7,
+      "x-commons-spellings": [
+        "currency",
+        "asset",
+        "token",
+        "currency_code",
+        "symbol",
+        "currencyCode"
+      ]
+    },
+    "total": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.5,
+      "x-commons-providers": 7,
+      "x-commons-spellings": [
+        "amount",
+        "balance",
+        "total_balance"
+      ]
+    },
+    "available": {
+      "type": "number",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.286,
+      "x-commons-providers": 4,
+      "x-commons-spellings": [
+        "available",
+        "available_amount",
+        "availableBalance",
+        "available_balance"
+      ]
+    },
+    "balances": {
+      "type": "array",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.286,
+      "x-commons-providers": 4,
+      "x-commons-spellings": [
+        "balances"
+      ]
+    },
+    "chain": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.286,
+      "x-commons-providers": 4,
+      "x-commons-spellings": [
+        "chain",
+        "network",
+        "networkId",
+        "chainId"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.286,
+      "x-commons-providers": 4,
+      "x-commons-spellings": [
+        "id",
+        "walletId"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.214,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "name",
+        "title"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "crypto-wallets",
+    "concept": "wallet_balance",
+    "providers": 14,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

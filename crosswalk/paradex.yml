@@ -1,0 +1,62 @@
+provider: paradex
+apis_io: https://apis.io/providers/paradex/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - vaults
+    properties:
+      address: address
+      name: name
+      created_at: created_at
+      type: kind
+      status: status
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/paradex-openapi-prod.json#GET /vaults
+    - openapi/_original/paradex-openapi-prod.json#POST /vaults
+    - openapi/_original/paradex-openapi.yml#GET /vaults
+    - openapi/_original/paradex-openapi.yml#POST /vaults
+  wallet_transaction:
+    path_segment:
+    - transfers
+    - transfer
+    - transactions
+    properties:
+      status:
+      - state
+      - status
+      id: id
+      direction:
+      - type
+      - direction
+      - kind
+      tx_hash: hash
+      amount: amount
+      created_at: created_at
+      asset: token
+      from_address: sender
+      to_address: recipient
+      fee: fee
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/paradex-openapi-prod.json#GET /transactions
+    - openapi/_original/paradex-openapi-prod.json#GET /transfers
+    - openapi/_original/paradex-openapi-prod.json#GET /vaults/transfers
+    - openapi/_original/paradex-openapi-prod.json#GET /xp/transfer/{transfer_id}
+    - openapi/_original/paradex-openapi-prod.json#GET /xp/transfers
+  token:
+    path_segment:
+    - tokens
+    properties:
+      name: name
+      id: token_id
+      created_at: created_at
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/paradex-openapi-prod.json#DELETE /account/tokens/{lookup_id}
+    - openapi/_original/paradex-openapi-prod.json#GET /account/tokens
+    - openapi/_original/paradex-openapi-prod.json#POST /account/tokens
+    - openapi/_original/paradex-openapi.yml#DELETE /account/tokens/{lookup_id}
+    - openapi/_original/paradex-openapi.yml#GET /account/tokens

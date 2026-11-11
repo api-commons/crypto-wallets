@@ -1,0 +1,58 @@
+provider: citi
+apis_io: https://apis.io/providers/citi/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallets
+    properties:
+      status: status
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/citi-marketplace-management-openapi.yaml#GET /merchants/v1/wallets
+    - openapi/_original/marketplace-management.yaml#GET /merchants/v1/wallets
+  wallet_balance:
+    path_segment:
+    - balances
+    properties:
+      asset: currency_code
+      available: available_amount
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/citi-marketplace-management-openapi.yaml#GET /merchants/v1/wallets/balances
+    - openapi/_original/marketplace-management.yaml#GET /merchants/v1/wallets/balances
+  wallet_transaction:
+    path_segment:
+    - transactions
+    properties:
+      status:
+      - transaction_status
+      - status
+      - transactionStatus
+      direction:
+      - transaction_type
+      - transactionType
+      amount: amount
+      asset: currencyCode
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/accounts.yaml#GET /transactions
+    - openapi/_original/citi-accounts-openapi.yaml#GET /transactions
+    - openapi/_original/citi-marketplace-management-openapi.yaml#GET /merchants/v1/transactions
+    - openapi/_original/citi-statement-transactions-openapi.yaml#POST /accounts/v1/statement/transactions
+    - openapi/_original/citi-transfer-agency-transactions-openapi.yaml#GET /v1/transactions/{fundManagerId}
+  token:
+    path_segment:
+    - token
+    - tokens
+    properties:
+      id: id
+      access_token: access_token
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/DigitalPaymentsCollectionsv12.yaml#DELETE /digitalpayments/v1/payment-acceptance/tokens
+    - openapi/_original/DigitalPaymentsCollectionsv12.yaml#GET /digitalpayments/v1/payment-acceptance/tokens
+    - openapi/_original/DigitalPaymentsCollectionsv12.yaml#PATCH /digitalpayments/v1/payment-acceptance/tokens
+    - openapi/_original/DigitalPaymentsCollectionsv12.yaml#POST /digitalpayments/v1/payment-acceptance/tokens
+    - openapi/_original/authentication_api_1.yaml#POST /authenticationservices/v1/oauth/token

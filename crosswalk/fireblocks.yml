@@ -1,0 +1,111 @@
+provider: fireblocks
+apis_io: https://apis.io/providers/fireblocks/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - vaults
+    - accounts
+    - wallets
+    properties:
+      id:
+      - walletId
+      - id
+      name: name
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/fireblocks-openapi.yml#DELETE /address_registry/vaults
+    - openapi/_original/fireblocks-openapi.yml#DELETE /address_registry/vaults/{vaultAccountId}
+    - openapi/_original/fireblocks-openapi.yml#GET /address_registry/vaults
+    - openapi/_original/fireblocks-openapi.yml#GET /address_registry/vaults/{vaultAccountId}
+    - openapi/_original/fireblocks-openapi.yml#GET /legal_entities/{legalEntityId}/vaults
+  wallet_address:
+    path_segment:
+    - addresses
+    properties:
+      address: address
+      format:
+      - addressFormat
+      - type
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/fireblocks-openapi.yml#GET /ncw/wallets/{walletId}/accounts/{accountId}/assets/{assetId}/addresses
+    - openapi/_original/fireblocks-openapi.yml#GET /vault/accounts/{vaultAccountId}/{assetId}/addresses
+    - openapi/_original/fireblocks-openapi.yml#POST /vault/accounts/addresses/bulk
+    - openapi/_original/fireblocks-openapi.yml#POST /vault/accounts/{vaultAccountId}/{assetId}/addresses
+    - openapi/_original/fireblocks-openapi.yml#PUT /vault/accounts/{vaultAccountId}/{assetId}/addresses/{addressId}
+  wallet_balance:
+    path_segment:
+    - balance
+    properties:
+      available: available
+      id: id
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/fireblocks-openapi.yml#GET /ncw/wallets/{walletId}/accounts/{accountId}/assets/{assetId}/balance
+    - openapi/_original/fireblocks-openapi.yml#PUT /ncw/wallets/{walletId}/accounts/{accountId}/assets/{assetId}/balance
+  wallet_transaction:
+    path_segment:
+    - transactions
+    - transaction
+    - transfer
+    - transfers
+    properties:
+      status: status
+      id: id
+      direction:
+      - type
+      - operation
+      tx_hash:
+      - transactionHash
+      - txHash
+      amount: amount
+      created_at: createdAt
+      asset: assetId
+      from_address:
+      - fromAddress
+      - source
+      - sourceAddress
+      to_address:
+      - toAddress
+      - destination
+      - destinationAddress
+      fee:
+      - fee
+      - networkFee
+      chain: chainId
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/fireblocks-openapi.yml#GET /off_exchange/settlements/transactions
+    - openapi/_original/fireblocks-openapi.yml#GET /onchain_data/base_asset_id/{baseAssetId}/contract_address/{contractAddress}/transactions
+    - openapi/_original/fireblocks-openapi.yml#GET /screening/transaction/{txId}
+    - openapi/_original/fireblocks-openapi.yml#GET /tokenization/tokens/{id}/transactions
+    - openapi/_original/fireblocks-openapi.yml#GET /tokenization/tokens/{id}/transfers
+  token:
+    path_segment:
+    - tokens
+    - assets
+    - supported_assets
+    - token
+    properties:
+      symbol: symbol
+      name:
+      - name
+      - displayName
+      contract_address:
+      - contractAddress
+      - address
+      decimals: decimals
+      chain: blockchain
+      id:
+      - id
+      - tokenId
+      - externalId
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/fireblocks-openapi.yml#DELETE /tokenization/tokens/{id}
+    - openapi/_original/fireblocks-openapi.yml#GET /ncw/wallets/supported_assets
+    - openapi/_original/fireblocks-openapi.yml#GET /ncw/wallets/{walletId}/accounts/{accountId}/assets
+    - openapi/_original/fireblocks-openapi.yml#GET /ncw/wallets/{walletId}/accounts/{accountId}/assets/{assetId}
+    - openapi/_original/fireblocks-openapi.yml#GET /nfts/ownership/tokens

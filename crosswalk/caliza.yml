@@ -1,0 +1,28 @@
+provider: caliza
+apis_io: https://apis.io/providers/caliza/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallets
+    properties:
+      address: walletAddress
+      asset: currency
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/caliza-api-documentation-reference-openapi.yml#GET /v1/beneficiaries/{beneficiaryId}/wallets
+  wallet_transaction:
+    path_segment:
+    - transactions
+    properties:
+      status: status
+      id: id
+      created_at: createdDate
+      from_address: from
+      to_address: to
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/caliza-api-documentation-reference-openapi.yml#GET /v1/transactions
+    - openapi/_original/caliza-api-documentation-reference-openapi.yml#GET /v1/transactions/{id}
+    - openapi/_original/caliza-api-documentation-reference-openapi.yml#POST /v1/transactions

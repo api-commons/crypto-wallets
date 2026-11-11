@@ -1,0 +1,84 @@
+provider: dfns
+apis_io: https://apis.io/providers/dfns/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - vaults
+    - wallets
+    properties:
+      id:
+      - id
+      - externalId
+      address: address
+      name: name
+      created_at: dateCreated
+      chain: network
+      status: status
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/dfns-openapi.yml#GET /vaults
+    - openapi/_original/dfns-openapi.yml#GET /vaults/{vaultId}
+    - openapi/_original/dfns-openapi.yml#GET /wallets
+    - openapi/_original/dfns-openapi.yml#GET /wallets/{walletId}
+    - openapi/_original/dfns-openapi.yml#POST /vaults
+  wallet_address:
+    path_segment:
+    - addresses
+    properties:
+      address: address
+      chain: network
+      id: walletId
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/dfns-openapi.yml#POST /vaults/{vaultId}/addresses
+  wallet_balance:
+    path_segment:
+    - balances
+    properties:
+      total: amount
+      chain: network
+      id: id
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/dfns-openapi.yml#GET /vaults/{vaultId}/balances
+  wallet_transaction:
+    path_segment:
+    - transfers
+    - transactions
+    - deposits
+    - withdrawals
+    - transfer
+    properties:
+      status: status
+      id:
+      - id
+      - walletId
+      - externalId
+      direction: kind
+      tx_hash: txHash
+      amount: amount
+      created_at: dateCreated
+      to_address: to
+      fee: fee
+      chain: network
+      metadata: metadata
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/dfns-openapi.yml#GET /wallets/{walletId}/transactions
+    - openapi/_original/dfns-openapi.yml#GET /wallets/{walletId}/transactions/{transactionId}
+    - openapi/_original/dfns-openapi.yml#GET /wallets/{walletId}/transfers
+    - openapi/_original/dfns-openapi.yml#GET /wallets/{walletId}/transfers/{transferId}
+    - openapi/_original/dfns-openapi.yml#POST /exchanges/{exchangeId}/accounts/{accountId}/deposits
+  token:
+    path_segment:
+    - tokens
+    - assets
+    properties:
+      symbol: symbol
+      decimals: decimals
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/dfns-openapi.yml#GET /wallets/{walletId}/assets
+    - openapi/_original/dfns-openapi.yml#POST /auth/tokens

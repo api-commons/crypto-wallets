@@ -1,0 +1,101 @@
+provider: ripple-labs
+apis_io: https://apis.io/providers/ripple-labs/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - vaults
+    - wallets
+    properties:
+      id:
+      - id
+      - externalId
+      address: address
+      name: name
+      created_at: createdAt
+      type: walletType
+      chain: blockchain
+      status: status
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/ripple-labs-palisade-wallet-openapi-original.yml#GET /v2/vaults
+    - openapi/_original/ripple-labs-palisade-wallet-openapi-original.yml#GET /v2/vaults/{id}
+    - openapi/_original/ripple-labs-palisade-wallet-openapi-original.yml#GET /v2/wallets
+    - openapi/_original/ripple-labs-palisade-wallet-openapi-original.yml#GET /v2/wallets/{id}
+    - openapi/_original/ripple-labs-palisade-wallet-openapi-original.yml#POST /v2/vaults
+  wallet_balance:
+    path_segment:
+    - balances
+    properties:
+      asset:
+      - currencyCode
+      - asset
+      - currency
+      total:
+      - balance
+      - total_balance
+      available:
+      - availableBalance
+      - available_balance
+      balances: balances
+      name: name
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/ripple-labs-palisade-wallet-openapi-original.yml#GET /v2/vaults/{vaultId}/balances
+    - openapi/_original/ripple-labs-palisade-wallet-openapi-original.yml#GET /v2/vaults/{vaultId}/wallets/{walletId}/balances
+    - openapi/_original/ripple-labs-ripplenet-openapi-original.yml#GET /monitor/platform/accounts/balances
+  wallet_transaction:
+    path_segment:
+    - transactions
+    - transfers
+    - transfer
+    properties:
+      status:
+      - status
+      - state
+      id:
+      - id
+      - walletId
+      - externalId
+      direction:
+      - transactionType
+      - type
+      tx_hash: hash
+      amount:
+      - qty
+      - amount
+      created_at:
+      - createdAt
+      - created_at
+      asset:
+      - asset
+      - symbol
+      - token
+      from_address: source
+      to_address:
+      - destinationAddress
+      - destination
+      fee: networkFee
+      chain: blockchain
+      metadata:
+      - attributes
+      - labels
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/ripple-labs-palisade-wallet-openapi-original.yml#GET /v2/transactions
+    - openapi/_original/ripple-labs-palisade-wallet-openapi-original.yml#GET /v2/vaults/{vaultId}/wallets/{walletId}/transactions
+    - openapi/_original/ripple-labs-palisade-wallet-openapi-original.yml#GET /v2/vaults/{vaultId}/wallets/{walletId}/transactions/{transactionId}
+    - openapi/_original/ripple-labs-palisade-wallet-openapi-original.yml#POST /v2/vaults/{vaultId}/wallets/{walletId}/transactions/transfer
+    - openapi/_original/ripple-labs-ripplenet-openapi-original.yml#GET /transfers
+  token:
+    path_segment:
+    - token
+    properties:
+      access_token:
+      - accessToken
+      - access_token
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/ripple-labs-palisade-wallet-openapi-original.yml#POST /v2/credentials/oauth/token
+    - openapi/_original/ripple-labs-rlusd-openapi-original.yml#POST /v2/oauth/token

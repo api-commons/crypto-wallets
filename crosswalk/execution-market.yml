@@ -1,0 +1,47 @@
+provider: execution-market
+apis_io: https://apis.io/providers/execution-market/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallet
+    properties:
+      address: wallet_address
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/execution-market-openapi.json#GET /api/v1/reputation/identity/wallet/{wallet_address}
+    - openapi/_original/execution-market-openapi.json#PATCH /api/v1/account/wallet
+    - openapi/_original/execution-market-openapi.yml#GET /api/v1/reputation/identity/wallet/{wallet_address}
+    - openapi/_original/execution-market-openapi.yml#PATCH /api/v1/account/wallet
+  wallet_transaction:
+    path_segment:
+    - transactions
+    - deposits
+    properties:
+      status:
+      - status
+      - state
+      id: id
+      tx_hash: tx_hash
+      amount: amount
+      created_at: created_at
+      asset: token
+      from_address: from_address
+      to_address: to_address
+      chain: network
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/execution-market-openapi.json#GET /api/v1/escrow/deposits/{deposit_id}
+    - openapi/_original/execution-market-openapi.json#GET /api/v1/tasks/{task_id}/transactions
+    - openapi/_original/execution-market-openapi.yml#GET /api/v1/escrow/deposits/{deposit_id}
+    - openapi/_original/execution-market-openapi.yml#GET /api/v1/tasks/{task_id}/transactions
+  token:
+    path_segment:
+    - token
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/execution-market-openapi.json#POST /oauth/token
+    - openapi/_original/execution-market-openapi.yml#POST /oauth/token

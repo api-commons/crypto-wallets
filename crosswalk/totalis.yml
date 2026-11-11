@@ -1,0 +1,13 @@
+provider: totalis
+apis_io: https://apis.io/providers/totalis/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallet
+    properties:
+      address: address
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/totalis-openapi-original.json#GET /v1/wallet

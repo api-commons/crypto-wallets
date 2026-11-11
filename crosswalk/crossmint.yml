@@ -1,0 +1,67 @@
+provider: crossmint
+apis_io: https://apis.io/providers/crossmint/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallets
+    properties:
+      address: address
+      created_at: createdAt
+      type: type
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/crossmint-openapi.yml#GET /2025-06-09/wallets/{walletLocator}
+    - openapi/_original/crossmint-openapi.yml#POST /2025-06-09/wallets
+  wallet_balance:
+    path_segment:
+    - balances
+    properties:
+      asset:
+      - token
+      - symbol
+      total: amount
+      balances: balances
+      chain: chain
+      name: name
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/crossmint-openapi.yml#GET /2024-09-26/wallets/{walletLocator}/balances
+    - openapi/_original/crossmint-openapi.yml#GET /2025-06-09/wallets/{walletLocator}/balances
+    - openapi/_original/crossmint-openapi.yml#GET /unstable/wallets/{walletLocator}/balances
+    - openapi/_original/crossmint-openapi.yml#GET /v1-alpha2/wallets/{walletLocator}/balances
+    - openapi/_original/crossmint-openapi.yml#POST /2024-09-26/wallets/{walletLocator}/balances
+  wallet_transaction:
+    path_segment:
+    - transfers
+    - transactions
+    properties:
+      status: status
+      id: id
+      direction:
+      - transactionType
+      - type
+      amount: amount
+      created_at: createdAt
+      asset: token
+      from_address: sender
+      to_address: recipient
+      fee: fees
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/crossmint-openapi.yml#GET /2025-06-09/wallets/me{walletLocator}/transactions
+    - openapi/_original/crossmint-openapi.yml#GET /2025-06-09/wallets/me{walletLocator}/transactions/{transactionId}
+    - openapi/_original/crossmint-openapi.yml#GET /2025-06-09/wallets/{walletLocator}/tokens/{tokenLocator}/transfers/{transactionId}
+    - openapi/_original/crossmint-openapi.yml#GET /2025-06-09/wallets/{walletLocator}/transactions
+    - openapi/_original/crossmint-openapi.yml#GET /2025-06-09/wallets/{walletLocator}/transactions/{transactionId}
+  token:
+    path_segment:
+    - tokens
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/crossmint-openapi.yml#GET /2024-09-26/tokens
+    - openapi/_original/crossmint-openapi.yml#GET /2024-09-26/tokens/{tokenLocator}
+    - openapi/_original/crossmint-openapi.yml#GET /v1-alpha2/tokens
+    - openapi/_original/crossmint-openapi.yml#GET /v1-alpha2/tokens/{tokenLocator}

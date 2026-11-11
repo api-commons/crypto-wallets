@@ -1,0 +1,44 @@
+provider: bvnk
+apis_io: https://apis.io/providers/bvnk/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallet
+    properties:
+      id: id
+      address: address
+      chain: protocol
+      asset: currency
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/bvnk-api-endpoints-openapi-original.yml#GET /api/wallet
+    - openapi/_original/bvnk-api-endpoints-openapi-original.yml#GET /api/wallet/{id}
+    - openapi/_original/bvnk-api-endpoints-openapi-original.yml#POST /api/wallet
+  wallet_balance:
+    path_segment:
+    - balances
+    properties:
+      asset: currency
+      available: available
+      id: walletId
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/bvnk-api-endpoints-openapi-original.yml#GET /api/wallet/balances
+  wallet_transaction:
+    path_segment:
+    - transactions
+    properties:
+      status: status
+      id: id
+      direction: type
+      tx_hash: hash
+      amount: amount
+      created_at: createdAt
+      asset: asset
+      metadata: metadata
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/bvnk-layer1-digital-asset-openapi-original.yml#GET /digital/v1/transactions
+    - openapi/_original/bvnk-layer1-digital-asset-openapi-original.yml#GET /digital/v1/transactions/{transactionId}

@@ -1,0 +1,18 @@
+provider: n3xt
+apis_io: https://apis.io/providers/n3xt/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallets
+    properties:
+      id: id
+      address: address
+      name: nickname
+      created_at: createdAt
+      status: status
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/n3xt-openapi-original.json#GET /wallets
+    - openapi/_original/n3xt-openapi-original.json#GET /wallets/{id}

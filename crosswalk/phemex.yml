@@ -1,0 +1,27 @@
+provider: phemex
+apis_io: https://apis.io/providers/phemex/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallets
+    properties:
+      asset: currency
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/spot.yml#GET /spot/wallets
+  wallet_transaction:
+    path_segment:
+    - transfer
+    properties:
+      status: status
+      created_at: createTime
+      asset: currency
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/transfer.yml#GET /assets/futures/sub-accounts/transfer
+    - openapi/_original/transfer.yml#GET /assets/spots/sub-accounts/transfer
+    - openapi/_original/transfer.yml#GET /assets/transfer
+    - openapi/_original/transfer.yml#POST /assets/futures/sub-accounts/transfer
+    - openapi/_original/transfer.yml#POST /assets/spots/sub-accounts/transfer

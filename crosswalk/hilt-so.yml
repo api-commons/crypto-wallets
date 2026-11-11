@@ -1,0 +1,15 @@
+provider: hilt-so
+apis_io: https://apis.io/providers/hilt-so/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallet
+    properties:
+      address: wallet_address
+      asset: token
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/hilt-so-api-openapi.json#POST /v1/auth/wallet
+    - openapi/_original/hilt-so-openapi.yml#POST /v1/auth/wallet

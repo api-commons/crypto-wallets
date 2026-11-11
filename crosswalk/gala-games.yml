@@ -1,0 +1,33 @@
+provider: gala-games
+apis_io: https://apis.io/providers/gala-games/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallet
+    properties:
+      status: status
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/gala-games-defi-backend-openapi.json#GET /incentive/wallet/{walletAddress}
+  wallet_transaction:
+    path_segment:
+    - transactions
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/gala-games-block-explorer-openapi.json#GET /v1/explorer/transactions
+    - openapi/_original/gala-games-block-explorer-openapi.json#GET /v1/explorer/transactions/{channel}
+    - openapi/_original/gala-games-defi-backend-openapi.json#GET /api/v1/wallet/transactions
+    - openapi/_original/gala-games-defi-backend-openapi.json#GET /explore/transactions
+  token:
+    path_segment:
+    - tokens
+    properties:
+      symbol: symbol
+      name: name
+      decimals: decimals
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/gala-games-galaconnect-openapi.json#GET /v1/tokens

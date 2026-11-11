@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/crypto-wallets/main/schema/wallet_address.json",
+  "title": "Wallet Address",
+  "description": "The common wallet_address in Crypto Wallets, distilled from 6 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "address": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 1.0,
+      "x-commons-providers": 6,
+      "x-commons-spellings": [
+        "address"
+      ]
+    },
+    "chain": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.5,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "network",
+        "chain"
+      ]
+    },
+    "format": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.5,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "type",
+        "addressFormat",
+        "format"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.5,
+      "x-commons-providers": 3,
+      "x-commons-spellings": [
+        "walletId",
+        "id"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "crypto-wallets",
+    "concept": "wallet_address",
+    "providers": 6,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

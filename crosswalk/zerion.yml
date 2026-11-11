@@ -1,0 +1,27 @@
+provider: zerion
+apis_io: https://apis.io/providers/zerion/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallets
+    properties:
+      id: id
+      type: type
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/zerion-openapi-original.yml#GET /v1/tx-subscriptions/{subscription_id}/wallets
+    - openapi/_original/zerion-openapi-original.yml#PATCH /v1/tx-subscriptions/{subscription_id}/wallets
+    - openapi/_original/zerion-openapi-original.yml#PUT /v1/tx-subscriptions/{subscription_id}/wallets
+  wallet_transaction:
+    path_segment:
+    - transactions
+    properties:
+      id: id
+      direction: type
+      metadata: attributes
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/zerion-openapi-original.yml#GET /v1/wallet-sets/transactions/
+    - openapi/_original/zerion-openapi-original.yml#GET /v1/wallets/{address}/transactions/

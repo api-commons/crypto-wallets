@@ -1,0 +1,12 @@
+provider: reown
+apis_io: https://apis.io/providers/reown/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallets
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/reown-openapi.yml#GET /v3/wallets

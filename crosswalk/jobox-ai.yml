@@ -1,0 +1,16 @@
+provider: jobox-ai
+apis_io: https://apis.io/providers/jobox-ai/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallet
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/jobox-ai-kili-openapi.json#GET /v2/wallet/{user_id}
+    - openapi/_original/jobox-ai-kili-openapi.json#GET /v3/wallet/{user_id}
+    - openapi/_original/jobox-ai-kili-openapi.json#POST /v2/wallet
+    - openapi/_original/jobox-ai-kili-openapi.json#POST /v3/wallet
+    - openapi/_original/jobox-ai-kili-swagger-2019-05-07.json#GET /v2/wallet/{user_id}

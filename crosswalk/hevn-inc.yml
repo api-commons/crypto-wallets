@@ -1,0 +1,48 @@
+provider: hevn-inc
+apis_io: https://apis.io/providers/hevn-inc/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallet
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/hevn-inc-openapi-original.json#POST /api/v1/wallet
+  wallet_balance:
+    path_segment:
+    - balance
+    properties:
+      chain: chainId
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/hevn-inc-openapi-original.json#GET /api/v1/wallet/balance
+  wallet_transaction:
+    path_segment:
+    - transfer
+    - transfers
+    - transactions
+    properties:
+      status: status
+      direction: type
+      tx_hash: txHash
+      amount: amount
+      from_address: from
+      to_address: to
+      fee: fee
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/hevn-inc-openapi-original.json#GET /api/v1/apps/transfers
+    - openapi/_original/hevn-inc-openapi-original.json#GET /api/v1/auth/mcp/transfers
+    - openapi/_original/hevn-inc-openapi-original.json#GET /api/v1/mcp/transfers
+    - openapi/_original/hevn-inc-openapi-original.json#GET /api/v1/transactions
+    - openapi/_original/hevn-inc-openapi-original.json#POST /api/v1/apps/transfer
+  token:
+    path_segment:
+    - tokens
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/hevn-inc-openapi-original.json#GET /api/v1/balance/oneclick/tokens
+    - openapi/_original/hevn-inc-openapi-original.json#GET /api/v1/wallet/balance/oneclick/tokens

@@ -1,0 +1,70 @@
+provider: b3
+apis_io: https://apis.io/providers/b3/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallets
+    properties:
+      id: id
+      address: address
+      name: name
+      created_at: createdAt
+      type: accountType
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/b3-b3os-workflow-openapi.json#DELETE /v1/organizations/{orgId}/wallets/{walletId}
+    - openapi/_original/b3-b3os-workflow-openapi.json#GET /v1/organizations/{orgId}/wallets
+    - openapi/_original/b3-b3os-workflow-openapi.json#POST /v1/organizations/{orgId}/wallets
+    - openapi/_original/b3-b3os-workflow-openapi_2.json#DELETE /v1/organizations/{orgId}/wallets/{walletId}
+    - openapi/_original/b3-b3os-workflow-openapi_2.json#GET /v1/organizations/{orgId}/wallets
+  wallet_transaction:
+    path_segment:
+    - transactions
+    - transfers
+    - withdrawals
+    - transaction
+    properties:
+      status: status
+      direction:
+      - type
+      - transaction_type
+      tx_hash:
+      - hash
+      - transaction_hash
+      amount: amount
+      asset: token
+      from_address:
+      - from
+      - from_address
+      to_address:
+      - to
+      - to_address
+      fee: fee
+      chain: chain_id
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/b3-data-api-openapi.json#GET /blockscout/addresses/{address_hash}/transactions
+    - openapi/_original/b3-data-api-openapi.json#GET /blockscout/addresses/{address_hash}/withdrawals
+    - openapi/_original/b3-data-api-openapi.json#GET /blockscout/blocks/{block_number_or_hash}/transactions
+    - openapi/_original/b3-data-api-openapi.json#GET /blockscout/blocks/{block_number_or_hash}/withdrawals
+    - openapi/_original/b3-data-api-openapi.json#GET /blockscout/main-page/transactions
+  token:
+    path_segment:
+    - tokens
+    properties:
+      symbol: symbol
+      name: name
+      contract_address:
+      - address
+      - token_address
+      decimals: decimals
+      chain: chain_id
+      id: token_id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/b3-data-api-openapi.json#GET /blockscout/addresses/{address_hash}/tokens
+    - openapi/_original/b3-data-api-openapi.json#GET /blockscout/tokens
+    - openapi/_original/b3-data-api-openapi.json#GET /blockscout/tokens/{address_hash}
+    - openapi/_original/b3-data-api-openapi.json#GET /insights/v1/tokens

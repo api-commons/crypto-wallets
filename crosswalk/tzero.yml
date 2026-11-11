@@ -1,0 +1,72 @@
+provider: tzero
+apis_io: https://apis.io/providers/tzero/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - vaults
+    - wallet
+    properties:
+      id: id
+      address: address
+      created_at: createdAt
+      asset: assetId
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/tzero-institutional-openapi.json#GET /api/v1/custody/vaults
+    - openapi/_original/tzero-institutional-openapi.json#GET /api/v1/custody/vaults/{id}
+    - openapi/_original/tzero-institutional-openapi.json#GET /api/v1/subred/embed/wallet
+  wallet_address:
+    path_segment:
+    - deposit-addresses
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/tzero-institutional-openapi.json#GET /api/v1/custody-accounts/accounts/{accountId}/deposit-addresses
+  wallet_balance:
+    path_segment:
+    - balances
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/tzero-institutional-openapi.json#GET /api/v1/custody/vaults/{id}/balances
+    - openapi/_original/tzero-issuance-secondary-markets-openapi.json#GET /pi/v1/accounts/{accountId}/balances
+  wallet_transaction:
+    path_segment:
+    - transfers
+    - transfer
+    properties:
+      status: status
+      id: id
+      direction: transactionType
+      amount:
+      - quantity
+      - amount
+      created_at: createdAt
+      asset:
+      - assetId
+      - currency
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/tzero-institutional-openapi.json#GET /api/v1/custody-accounts/accounts/{accountId}/transfers
+    - openapi/_original/tzero-institutional-openapi.json#GET /api/v1/custody-accounts/transfers/{transferId}
+    - openapi/_original/tzero-institutional-openapi.json#GET /api/v1/custody/transfers
+    - openapi/_original/tzero-institutional-openapi.json#GET /api/v1/transfers/
+    - openapi/_original/tzero-institutional-openapi.json#GET /api/v1/transfers/{id}
+  token:
+    path_segment:
+    - tokens
+    - token
+    properties:
+      symbol: symbol
+      name: name
+      decimals: decimals
+      id: id
+      access_token: accessToken
+      created_at: createdAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/tzero-institutional-openapi.json#GET /api/v1/tokens/
+    - openapi/_original/tzero-institutional-openapi.json#GET /api/v1/tokens/{id}
+    - openapi/_original/tzero-issuance-secondary-markets-openapi.json#POST /auth/v1/api/token

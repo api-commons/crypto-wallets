@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/crypto-wallets/main/schema/wallet.json",
+  "title": "Wallet",
+  "description": "The common wallet in Crypto Wallets, distilled from 70 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.514,
+      "x-commons-providers": 36,
+      "x-commons-spellings": [
+        "id",
+        "walletId",
+        "externalId",
+        "wallet_id",
+        "uuid"
+      ]
+    },
+    "address": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.457,
+      "x-commons-providers": 32,
+      "x-commons-spellings": [
+        "address",
+        "wallet_address",
+        "depositAddress",
+        "walletAddress"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.343,
+      "x-commons-providers": 24,
+      "x-commons-spellings": [
+        "name",
+        "label",
+        "title",
+        "nickname",
+        "displayName"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.3,
+      "x-commons-providers": 21,
+      "x-commons-spellings": [
+        "created_at",
+        "createdAt",
+        "dateCreated",
+        "created",
+        "createTime"
+      ],
+      "format": "date-time"
+    },
+    "type": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.286,
+      "x-commons-providers": 20,
+      "x-commons-spellings": [
+        "type",
+        "walletType",
+        "wallet_type",
+        "accountType",
+        "kind",
+        "@type"
+      ]
+    },
+    "chain": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.271,
+      "x-commons-providers": 19,
+      "x-commons-spellings": [
+        "chain",
+        "network",
+        "blockchain",
+        "chainId",
+        "networkId",
+        "protocol"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.257,
+      "x-commons-providers": 18,
+      "x-commons-spellings": [
+        "status",
+        "state"
+      ]
+    },
+    "asset": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.243,
+      "x-commons-providers": 17,
+      "x-commons-spellings": [
+        "currency",
+        "symbol",
+        "coin",
+        "asset_id",
+        "token",
+        "currency_code",
+        "asset",
+        "assetId"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "crypto-wallets",
+    "concept": "wallet",
+    "providers": 70,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

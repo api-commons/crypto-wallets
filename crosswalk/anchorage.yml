@@ -1,0 +1,76 @@
+provider: anchorage
+apis_io: https://apis.io/providers/anchorage/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallets
+    - vaults
+    properties:
+      id: walletId
+      address: depositAddress
+      name: name
+      type: type
+      chain: networkId
+      status: status
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/anchorage-v2-openapi-original.yml#GET /vaults
+    - openapi/_original/anchorage-v2-openapi-original.yml#GET /vaults/{vaultId}
+    - openapi/_original/anchorage-v2-openapi-original.yml#GET /wallets
+    - openapi/_original/anchorage-v2-openapi-original.yml#GET /wallets/{walletId}
+    - openapi/_original/anchorage-v3-openapi-original.yml#GET /batch/wallets/{batchId}
+  wallet_address:
+    path_segment:
+    - addresses
+    properties:
+      address: address
+      id: walletId
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/anchorage-v2-openapi-original.yml#GET /vaults/{vaultId}/addresses
+    - openapi/_original/anchorage-v2-openapi-original.yml#POST /wallets/{walletId}/addresses
+  wallet_balance:
+    path_segment:
+    - balances
+    properties:
+      balances: balances
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/anchorage-v2-openapi-original.yml#GET /trading/accounts/{accountId}/balances
+    - openapi/_original/anchorage-v3-openapi-original.yml#GET /wallets/{walletId}/balances
+    - openapi/_original/anchorage-v3-openapi-original.yml#GET /wallets/{walletId}/staking-positions/{positionId}/balances
+  wallet_transaction:
+    path_segment:
+    - transactions
+    - withdrawals
+    - transfers
+    - transaction
+    - transfer
+    properties:
+      status: status
+      id:
+      - externalId
+      - id
+      - walletId
+      direction:
+      - transactionType
+      - type
+      - direction
+      tx_hash: blockchainTxId
+      amount:
+      - amount
+      - quantity
+      created_at: createdAt
+      asset: asset
+      from_address: source
+      to_address: destination
+      fee: fee
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/anchorage-v2-openapi-original.yml#DELETE /subaccounts/{subaccountId}/fiat/withdrawals/{transactionId}
+    - openapi/_original/anchorage-v2-openapi-original.yml#DELETE /transfers/{transferId}
+    - openapi/_original/anchorage-v2-openapi-original.yml#GET /subaccounts/transactions
+    - openapi/_original/anchorage-v2-openapi-original.yml#GET /subaccounts/transactions/{transactionsIds}
+    - openapi/_original/anchorage-v2-openapi-original.yml#GET /subaccounts/{subaccountId}/fiat/withdrawals

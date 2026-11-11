@@ -1,0 +1,36 @@
+provider: coinflow
+apis_io: https://apis.io/providers/coinflow/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallet
+    properties:
+      chain: blockchain
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/coinflow-openapi-original.json#POST /marketplace/wallet
+  wallet_transaction:
+    path_segment:
+    - transaction
+    properties:
+      tx_hash: hash
+      amount: amount
+      asset: token
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/coinflow-openapi-original.json#POST /withdraw/evm/transaction
+    - openapi/_original/coinflow-openapi-original.json#POST /withdraw/transaction
+  token:
+    path_segment:
+    - token
+    properties:
+      contract_address: address
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/coinflow-openapi-original.json#POST /checkout/iban/token
+    - openapi/_original/coinflow-openapi-original.json#POST /checkout/interac/token
+    - openapi/_original/coinflow-openapi-original.json#POST /checkout/paypal/token/{merchantId}
+    - openapi/_original/coinflow-openapi-original.json#POST /checkout/token/{merchantId}
+    - openapi/_original/coinflow-openapi-original.json#POST /checkout/venmo/token/{merchantId}

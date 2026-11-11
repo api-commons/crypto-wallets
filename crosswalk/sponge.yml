@@ -1,0 +1,27 @@
+provider: sponge
+apis_io: https://apis.io/providers/sponge/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallets
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/sponge-openapi-original.json#GET /api/wallets/
+    - openapi/_original/sponge-openapi-original.json#GET /api/wallets/{id}
+  wallet_balance:
+    path_segment:
+    - balance
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/sponge-openapi-original.json#GET /api/wallets/{id}/balance
+  token:
+    path_segment:
+    - tokens
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/sponge-openapi-original.json#GET /api/solana/tokens

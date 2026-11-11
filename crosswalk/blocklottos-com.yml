@@ -1,0 +1,14 @@
+provider: blocklottos-com
+apis_io: https://apis.io/providers/blocklottos-com/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallet
+    properties:
+      status: status
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/blocklottos-com-openapi.json#GET /api/ads/wallet/{wallet_address}
+    - openapi/_original/blocklottos-com-openapi.yml#GET /api/ads/wallet/{wallet_address}

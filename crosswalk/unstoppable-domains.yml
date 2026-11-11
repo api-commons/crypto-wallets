@@ -1,0 +1,31 @@
+provider: unstoppable-domains
+apis_io: https://apis.io/providers/unstoppable-domains/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallets
+    properties:
+      address: address
+      type:
+      - '@type'
+      - type
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/unstoppable-domains-partner-api-openapi.yaml#GET /account/wallets
+    - openapi/_original/unstoppable-domains-partner-api-openapi.yaml#GET /account/wallets/{address}
+    - openapi/_original/unstoppable-domains-partner-api-openapi.yaml#GET /external/wallets
+    - openapi/_original/unstoppable-domains-partner-api-openapi.yaml#GET /external/wallets/{address}
+    - openapi/_original/unstoppable-domains-partner-api-openapi.yaml#PATCH /account/wallets/{address}
+  wallet_transaction:
+    path_segment:
+    - transactions
+    properties:
+      id: id
+      direction:
+      - '@type'
+      - type
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/unstoppable-domains-reseller-api-openapi.yaml#GET /account/billing/transactions

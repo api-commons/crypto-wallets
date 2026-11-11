@@ -1,0 +1,37 @@
+provider: amberdata
+apis_io: https://apis.io/providers/amberdata/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallets
+    properties:
+      name: title
+      status: status
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/amberdata-defi-openapi.yaml#GET /lending/{protocolId}/wallets/{walletAddress}
+  wallet_balance:
+    path_segment:
+    - balances
+    properties:
+      name: title
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/amberdata-blockchain-openapi.yaml#GET /addresses/balances
+    - openapi/_original/amberdata-blockchain-openapi.yaml#GET /addresses/{hash}/balances
+    - openapi/_original/amberdata-openapi.yml#GET /blockchains/{blockchainId}/addresses/{address}/balances
+  wallet_transaction:
+    path_segment:
+    - transactions
+    - transfers
+    properties:
+      status: status
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/amberdata-blockchain-openapi.yaml#GET /addresses/{hash}/transactions
+    - openapi/_original/amberdata-blockchain-openapi.yaml#GET /analytics/stablecoins/transfers
+    - openapi/_original/amberdata-blockchain-openapi.yaml#GET /tokens/{hash}/transfers
+    - openapi/_original/amberdata-openapi.yml#GET /blockchains/{blockchainId}/addresses/{address}/transactions
+    - openapi/_original/amberdata-openapi.yml#GET /blockchains/{blockchainId}/tokens/{address}/transfers

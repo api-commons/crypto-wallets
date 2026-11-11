@@ -1,0 +1,34 @@
+provider: cadana
+apis_io: https://apis.io/providers/cadana/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallets
+    properties:
+      id: id
+      asset: currency
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/cadana-embedded-consumer-wallets-openapi.yaml#GET /v1/users/{userId}/wallets
+  wallet_transaction:
+    path_segment:
+    - transactions
+    - transfers
+    - deposits
+    properties:
+      status: status
+      id: id
+      direction:
+      - type
+      - direction
+      amount: amount
+      fee: feeAmount
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/cadana-embedded-consumer-wallets-openapi.yaml#GET /v1/users/{userId}/transactions
+    - openapi/_original/cadana-embedded-consumer-wallets-openapi.yaml#GET /v1/users/{userId}/transactions/{transactionId}
+    - openapi/_original/cadana-embedded-consumer-wallets-openapi.yaml#POST /v1/users/{userId}/transactions
+    - openapi/_original/cadana-workforce-management-openapi.yaml#GET /v1/businesses/{businessId}/transactions
+    - openapi/_original/cadana-workforce-management-openapi.yaml#POST /v1/businesses/{businessId}/deposits

@@ -1,0 +1,23 @@
+provider: agentexchange-work
+apis_io: https://apis.io/providers/agentexchange-work/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallet
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/agentexchange-work-api-store-openapi.json#GET /crypto/wallet
+  token:
+    path_segment:
+    - token
+    properties:
+      symbol: symbol
+      name: name
+      decimals: decimals
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/agentexchange-work-api-store-openapi.json#GET /chain/token
+    - openapi/_original/agentexchange-work-api-store-openapi.json#GET /connect/token

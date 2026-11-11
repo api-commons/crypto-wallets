@@ -1,0 +1,321 @@
+openapi: 3.1.0
+info:
+  title: Crypto Wallets (API Commons)
+  version: 0.1.0-draft.20261110
+  description: 'The common Crypto Wallets interface, distilled from the harvested OpenAPI of 345 providers in the
+    APIs.io catalog. Not a product: no one serves this API. It is the shape the market already shares, measured,
+    so that providers, agents and integrators can map to one vocabulary. See profile.yml.'
+  license:
+    name: CC BY-NC-SA 4.0
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+paths:
+  /wallets:
+    get:
+      operationId: listWallets
+      summary: List wallets
+      tags:
+      - Wallets
+      x-commons-tier: core
+      x-commons-share: 0.76
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id001
+                  $ref: '#/components/schemas/Wallet'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createWallet
+      summary: Create a wallet
+      tags:
+      - Wallets
+      x-commons-tier: core
+      x-commons-share: 0.52
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id001
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id001
+  /wallets/{wallet_id}:
+    parameters:
+    - $ref: '#/components/parameters/wallet_id'
+    get:
+      operationId: getWallet
+      summary: Get a wallet
+      tags:
+      - Wallets
+      x-commons-tier: extended
+      x-commons-share: 0.453
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id001
+  /wallets/{wallet_id}/addresses:
+    parameters:
+    - $ref: '#/components/parameters/wallet_id'
+    post:
+      operationId: createWalletAddress
+      summary: Create a wallet address
+      tags:
+      - Wallet Addresses
+      x-commons-tier: core
+      x-commons-share: 0.857
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: &id002
+                $ref: '#/components/schemas/WalletAddress'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id002
+    get:
+      operationId: listWalletAddresses
+      summary: List addresses
+      tags:
+      - Wallet Addresses
+      x-commons-tier: core
+      x-commons-share: 0.714
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: *id002
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+  /wallets/{wallet_id}/balances:
+    parameters:
+    - $ref: '#/components/parameters/wallet_id'
+    get:
+      operationId: listWalletBalances
+      summary: List balances
+      tags:
+      - Wallet Balances
+      x-commons-tier: core
+      x-commons-share: 1.0
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/WalletBalance'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+  /wallet-transactions:
+    get:
+      operationId: listWalletTransactions
+      summary: List wallet transactions
+      tags:
+      - Wallet Transactions
+      x-commons-tier: core
+      x-commons-share: 0.87
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id003
+                  $ref: '#/components/schemas/WalletTransaction'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createWalletTransaction
+      summary: Create a wallet transaction
+      tags:
+      - Wallet Transactions
+      x-commons-tier: core
+      x-commons-share: 0.63
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id003
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id003
+  /wallet-transactions/{wallet_transaction_id}:
+    parameters:
+    - $ref: '#/components/parameters/wallet_transaction_id'
+    get:
+      operationId: getWalletTransaction
+      summary: Get a wallet transaction
+      tags:
+      - Wallet Transactions
+      x-commons-tier: core
+      x-commons-share: 0.685
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id003
+  /tokens:
+    get:
+      operationId: listTokens
+      summary: List tokens
+      tags:
+      - Tokens
+      x-commons-tier: core
+      x-commons-share: 0.704
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id004
+                  $ref: '#/components/schemas/Token'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createToken
+      summary: Create a token
+      tags:
+      - Tokens
+      x-commons-tier: core
+      x-commons-share: 0.63
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id004
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id004
+  /tokens/{token_id}:
+    parameters:
+    - $ref: '#/components/parameters/token_id'
+    get:
+      operationId: getToken
+      summary: Get a token
+      tags:
+      - Tokens
+      x-commons-tier: extended
+      x-commons-share: 0.259
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id004
+    delete:
+      operationId: deleteToken
+      summary: Delete a token
+      tags:
+      - Tokens
+      x-commons-tier: extended
+      x-commons-share: 0.222
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id004
+components:
+  schemas:
+    Wallet:
+      $ref: ./schema/wallet.json
+    WalletAddress:
+      $ref: ./schema/wallet_address.json
+    WalletBalance:
+      $ref: ./schema/wallet_balance.json
+    WalletTransaction:
+      $ref: ./schema/wallet_transaction.json
+    Token:
+      $ref: ./schema/token.json
+  parameters:
+    wallet_id:
+      name: wallet_id
+      in: path
+      required: true
+      schema:
+        type: string
+    wallet_address_id:
+      name: wallet_address_id
+      in: path
+      required: true
+      schema:
+        type: string
+    wallet_balance_id:
+      name: wallet_balance_id
+      in: path
+      required: true
+      schema:
+        type: string
+    wallet_transaction_id:
+      name: wallet_transaction_id
+      in: path
+      required: true
+      schema:
+        type: string
+    token_id:
+      name: token_id
+      in: path
+      required: true
+      schema:
+        type: string

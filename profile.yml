@@ -1,0 +1,816 @@
+context: crypto-wallets
+name: Crypto Wallets
+generated: '2026-11-10'
+version: 0.1.0-draft.20261110
+status: draft
+cohort:
+  tags:
+  - Wallets
+  - Digital Assets
+  - Stablecoins
+  - Custody
+  - Crypto
+  - Cryptocurrency
+  - Crypto Wallet
+  - Wallet Infrastructure
+  providers_with_harvested_openapi: 345
+thresholds:
+  core: 0.5
+  extended: 0.2
+  min_providers: 3
+excluded:
+  wallet:
+    angle: /vaults are DeFi yield vaults
+    kamino: /kvaults/vaults are DeFi yield vaults
+    figment: /vaults are staking vaults
+  wallet_transaction:
+    alpaca-markets: /accounts/{id}/transfers are brokerage cash transfers
+duplicates:
+  seshat-markets:
+  - kronos-seshat
+  lootrush:
+  - loot-rush-games
+  m0:
+  - m-0
+  polygon:
+  - massive-com
+  mesh:
+  - mesh-connect
+  mystars:
+  - mystars-faas-fulfilment-api
+shared_specs: {}
+concepts:
+  wallet:
+    segments_seen:
+      wallets: 44
+      wallet: 31
+      vaults: 12
+      accounts: 1
+    providers_exposing: 75
+    providers_with_readable_schema: 70
+    operations:
+    - operation: GET collection
+      providers: 57
+      share: 0.76
+      tier: core
+    - operation: POST collection
+      providers: 39
+      share: 0.52
+      tier: core
+    - operation: GET item
+      providers: 34
+      share: 0.453
+      tier: extended
+    - operation: UPDATE item
+      providers: 8
+      share: 0.107
+      tier: long-tail
+    - operation: DELETE item
+      providers: 4
+      share: 0.053
+      tier: long-tail
+    - operation: UPDATE collection
+      providers: 2
+      share: 0.027
+      tier: long-tail
+    - operation: DELETE collection
+      providers: 1
+      share: 0.013
+      tier: long-tail
+    properties:
+    - name: id
+      tier: core
+      providers: 36
+      share: 0.514
+      type: string
+      spellings:
+      - id
+      - walletId
+      - externalId
+      - wallet_id
+      - uuid
+    - name: address
+      tier: extended
+      providers: 32
+      share: 0.457
+      type: string
+      spellings:
+      - address
+      - wallet_address
+      - depositAddress
+      - walletAddress
+    - name: name
+      tier: extended
+      providers: 24
+      share: 0.343
+      type: string
+      spellings:
+      - name
+      - label
+      - title
+      - nickname
+      - displayName
+    - name: created_at
+      tier: extended
+      providers: 21
+      share: 0.3
+      type: string
+      spellings:
+      - created_at
+      - createdAt
+      - dateCreated
+      - created
+      - createTime
+    - name: type
+      tier: extended
+      providers: 20
+      share: 0.286
+      type: string
+      spellings:
+      - type
+      - walletType
+      - wallet_type
+      - accountType
+      - kind
+      - '@type'
+    - name: chain
+      tier: extended
+      providers: 19
+      share: 0.271
+      type: string
+      spellings:
+      - chain
+      - network
+      - blockchain
+      - chainId
+      - networkId
+      - protocol
+    - name: status
+      tier: extended
+      providers: 18
+      share: 0.257
+      type: string
+      spellings:
+      - status
+      - state
+    - name: asset
+      tier: extended
+      providers: 17
+      share: 0.243
+      type: string
+      spellings:
+      - currency
+      - symbol
+      - coin
+      - asset_id
+      - token
+      - currency_code
+      - asset
+      - assetId
+    long_tail_count: 433
+    long_tail_sample:
+    - updated_at
+    - metadata
+    - balance
+    - owner_id
+    - assets
+    - description
+    - addresses
+    - available
+    - balances
+    - error
+    - public_key
+    - wallet_name
+    - amount
+    - relationships
+    - signature
+    - vault_id
+    - alias
+    - available_balance
+    - chain_type
+    - created_by
+    - deleted_at
+    - derivation_path
+    - email
+    - enabled
+    - is_default
+    - organization_id
+    - payload
+    - receiver
+    - slug
+    - tag
+    - token_address
+    - token_id
+    - total_balance
+    - accepted_count
+    - account
+    - account_ids
+    - active
+    - active_wallet_name
+    - activity
+    - add
+  wallet_address:
+    segments_seen:
+      addresses: 5
+      deposit_addresses: 1
+      deposit-addresses: 1
+    providers_exposing: 7
+    providers_with_readable_schema: 6
+    operations:
+    - operation: POST collection
+      providers: 6
+      share: 0.857
+      tier: core
+    - operation: GET collection
+      providers: 5
+      share: 0.714
+      tier: core
+    - operation: GET item
+      providers: 1
+      share: 0.143
+      tier: long-tail
+    - operation: UPDATE item
+      providers: 1
+      share: 0.143
+      tier: long-tail
+    properties:
+    - name: address
+      tier: core
+      providers: 6
+      share: 1.0
+      type: string
+      spellings:
+      - address
+    - name: chain
+      tier: core
+      providers: 3
+      share: 0.5
+      type: string
+      spellings:
+      - network
+      - chain
+    - name: format
+      tier: core
+      providers: 3
+      share: 0.5
+      type: string
+      spellings:
+      - type
+      - addressFormat
+      - format
+    - name: id
+      tier: core
+      providers: 3
+      share: 0.5
+      type: string
+      spellings:
+      - walletId
+      - id
+    long_tail_count: 41
+    long_tail_sample:
+    - address_type
+    - asset
+    - name
+    - tag
+    - account_id
+    - account_name
+    - address_description
+    - address_id
+    - address_index
+    - address_signature_payload
+    - approval_request_id
+    - balances
+    - bip44_address_index
+    - cert_chain
+    - change
+    - coin_type
+    - created_at
+    - customer_ref_id
+    - derivation_path
+    - description
+    - descriptions
+    - enterprise_address
+    - import_address
+    - job_id
+    - key
+    - key_derivation_path
+    - legacy_address
+    - note
+    - payment_address
+    - public_key_compressed
+    - result
+    - signature
+    - signature_version
+    - signed_address
+    - status
+    - updated_at
+    - user_defined
+    - vault
+    - vault_account_id
+    - vault_account_to_copy_desc_from
+  wallet_balance:
+    segments_seen:
+      balances: 10
+      balance: 7
+    providers_exposing: 17
+    providers_with_readable_schema: 14
+    operations:
+    - operation: GET collection
+      providers: 17
+      share: 1.0
+      tier: core
+    - operation: GET item
+      providers: 2
+      share: 0.118
+      tier: long-tail
+    - operation: POST collection
+      providers: 1
+      share: 0.059
+      tier: long-tail
+    - operation: UPDATE collection
+      providers: 1
+      share: 0.059
+      tier: long-tail
+    properties:
+    - name: asset
+      tier: core
+      providers: 7
+      share: 0.5
+      type: string
+      spellings:
+      - currency
+      - asset
+      - token
+      - currency_code
+      - symbol
+      - currencyCode
+    - name: total
+      tier: core
+      providers: 7
+      share: 0.5
+      type: string
+      spellings:
+      - amount
+      - balance
+      - total_balance
+    - name: available
+      tier: extended
+      providers: 4
+      share: 0.286
+      type: number
+      spellings:
+      - available
+      - available_amount
+      - availableBalance
+      - available_balance
+    - name: balances
+      tier: extended
+      providers: 4
+      share: 0.286
+      type: array
+      spellings:
+      - balances
+    - name: chain
+      tier: extended
+      providers: 4
+      share: 0.286
+      type: string
+      spellings:
+      - chain
+      - network
+      - networkId
+      - chainId
+    - name: id
+      tier: extended
+      providers: 4
+      share: 0.286
+      type: string
+      spellings:
+      - id
+      - walletId
+    - name: name
+      tier: extended
+      providers: 3
+      share: 0.214
+      type: string
+      spellings:
+      - name
+      - title
+    long_tail_count: 46
+    long_tail_sample:
+    - account_id
+    - pending
+    - status
+    - account_type
+    - aggregated_fiat_value
+    - amount
+    - asset_type
+    - balance_by_token
+    - balance_usd
+    - block_hash
+    - block_height
+    - chains
+    - closed_at
+    - converted_available
+    - converted_reserved
+    - created_at
+    - current_price
+    - current_usd_value
+    - custodial
+    - decimals
+    - description
+    - external_account_id
+    - fiat
+    - fiat_value
+    - frozen_balance
+    - kind
+    - lock_id
+    - locked_amount
+    - metadata
+    - next_page_token
+    - payload
+    - platform_account_id
+    - positions
+    - quarantine_id
+    - rate
+    - raw_amount
+    - raw_balance
+    - relationships
+    - reserved
+    - reward_info
+  wallet_transaction:
+    segments_seen:
+      transactions: 41
+      transfers: 19
+      transfer: 14
+      transaction: 10
+      deposits: 9
+      withdrawals: 9
+    providers_exposing: 54
+    providers_with_readable_schema: 52
+    operations:
+    - operation: GET collection
+      providers: 47
+      share: 0.87
+      tier: core
+    - operation: GET item
+      providers: 37
+      share: 0.685
+      tier: core
+    - operation: POST collection
+      providers: 34
+      share: 0.63
+      tier: core
+    - operation: UPDATE item
+      providers: 3
+      share: 0.056
+      tier: long-tail
+    - operation: DELETE item
+      providers: 2
+      share: 0.037
+      tier: long-tail
+    - operation: POST item
+      providers: 1
+      share: 0.019
+      tier: long-tail
+    properties:
+    - name: status
+      tier: core
+      providers: 35
+      share: 0.673
+      type: string
+      spellings:
+      - status
+      - state
+      - transaction_status
+      - transactionStatus
+    - name: id
+      tier: core
+      providers: 33
+      share: 0.635
+      type: string
+      spellings:
+      - id
+      - externalId
+      - walletId
+      - wallet_id
+      - external_id
+      - uuid
+    - name: direction
+      tier: core
+      providers: 31
+      share: 0.596
+      type: string
+      spellings:
+      - type
+      - direction
+      - transaction_type
+      - transactionType
+      - kind
+      - operation
+      - '@type'
+    - name: tx_hash
+      tier: core
+      providers: 28
+      share: 0.538
+      type: string
+      spellings:
+      - hash
+      - transactionHash
+      - txHash
+      - txId
+      - txid
+      - tx_hash
+      - blockchainTxId
+      - transaction_hash
+    - name: amount
+      tier: extended
+      providers: 25
+      share: 0.481
+      type: string
+      spellings:
+      - amount
+      - quantity
+      - qty
+    - name: created_at
+      tier: extended
+      providers: 25
+      share: 0.481
+      type: string
+      spellings:
+      - createdAt
+      - created_at
+      - createTime
+      - created-at
+      - createdDate
+      - dateCreated
+      - create_date
+    - name: asset
+      tier: extended
+      providers: 24
+      share: 0.462
+      type: string
+      spellings:
+      - currency
+      - token
+      - asset
+      - symbol
+      - assetId
+      - coin
+      - asset_id
+      - currencyCode
+    - name: from_address
+      tier: extended
+      providers: 22
+      share: 0.423
+      type: string
+      spellings:
+      - source
+      - sender
+      - fromAddress
+      - from
+      - from_address
+      - source-address
+      - sourceAddress
+    - name: to_address
+      tier: extended
+      providers: 19
+      share: 0.365
+      type: string
+      spellings:
+      - to
+      - destination
+      - toAddress
+      - to_address
+      - recipient
+      - destinationAddress
+      - destination_address
+    - name: fee
+      tier: extended
+      providers: 17
+      share: 0.327
+      type: object
+      spellings:
+      - fee
+      - fees
+      - networkFee
+      - fee_amount
+      - feeAmount
+    - name: chain
+      tier: extended
+      providers: 14
+      share: 0.269
+      type: string
+      spellings:
+      - network
+      - chainId
+      - chain
+      - blockchain
+      - networkId
+      - chain_id
+    - name: metadata
+      tier: extended
+      providers: 14
+      share: 0.269
+      type: object
+      spellings:
+      - attributes
+      - metadata
+      - labels
+      - tags
+    long_tail_count: 836
+    long_tail_sample:
+    - transaction_id
+    - memo
+    - updated_at
+    - block_number
+    - expires_at
+    - description
+    - transfer_id
+    - block_hash
+    - note
+    - quote_id
+    - timestamp
+    - address
+    - completed_at
+    - idempotency_key
+    - name
+    - vault_id
+    - account
+    - beneficiary_id
+    - confirmations
+    - customer_id
+    - destinations
+    - details
+    - exchange_rate
+    - first
+    - fx_rate
+    - last
+    - number
+    - number_of_elements
+    - receiver
+    - reference
+    - size
+    - source_amount
+    - tag
+    - total_elements
+    - wallet
+    - account_id
+    - account_number
+    - additional_wallet_addresses
+    - amount_usd
+    - asset_transfers
+  token:
+    segments_seen:
+      tokens: 17
+      token: 15
+      assets: 3
+      supported_assets: 1
+    providers_exposing: 27
+    providers_with_readable_schema: 22
+    operations:
+    - operation: GET collection
+      providers: 19
+      share: 0.704
+      tier: core
+    - operation: POST collection
+      providers: 17
+      share: 0.63
+      tier: core
+    - operation: GET item
+      providers: 7
+      share: 0.259
+      tier: extended
+    - operation: DELETE item
+      providers: 6
+      share: 0.222
+      tier: extended
+    - operation: POST item
+      providers: 2
+      share: 0.074
+      tier: long-tail
+    - operation: UPDATE collection
+      providers: 2
+      share: 0.074
+      tier: long-tail
+    - operation: DELETE collection
+      providers: 1
+      share: 0.037
+      tier: long-tail
+    - operation: UPDATE item
+      providers: 1
+      share: 0.037
+      tier: long-tail
+    properties:
+    - name: symbol
+      tier: core
+      providers: 14
+      share: 0.636
+      type: string
+      spellings:
+      - symbol
+    - name: name
+      tier: core
+      providers: 13
+      share: 0.591
+      type: string
+      spellings:
+      - name
+      - displayName
+    - name: contract_address
+      tier: extended
+      providers: 9
+      share: 0.409
+      type: string
+      spellings:
+      - address
+      - contractAddress
+      - contract
+      - token_address
+    - name: decimals
+      tier: extended
+      providers: 9
+      share: 0.409
+      type: number
+      spellings:
+      - decimals
+    - name: chain
+      tier: extended
+      providers: 8
+      share: 0.364
+      type: string
+      spellings:
+      - chain
+      - chainId
+      - network
+      - chain_id
+      - blockchain
+      - networkId
+    - name: id
+      tier: extended
+      providers: 8
+      share: 0.364
+      type: string
+      spellings:
+      - id
+      - token_id
+      - tokenId
+      - externalId
+    - name: access_token
+      tier: extended
+      providers: 5
+      share: 0.227
+      type: string
+      spellings:
+      - access_token
+      - accessToken
+    - name: created_at
+      tier: extended
+      providers: 5
+      share: 0.227
+      type: string
+      spellings:
+      - createdAt
+      - created_at
+    long_tail_count: 205
+    long_tail_sample:
+    - client_id
+    - client_secret
+    - expires_in
+    - token_type
+    - type
+    - balance
+    - description
+    - refresh_token
+    - scope
+    - status
+    - active
+    - amount
+    - checksum
+    - collection
+    - create_params
+    - created_by
+    - fee
+    - fee_level
+    - kind
+    - note
+    - project_environment
+    - project_environment_id
+    - raw_token
+    - scopes
+    - token_addresses
+    - token_metadata
+    - total_supply
+    - use_gasless
+    - access_token_ttl
+    - account
+    - account_funding_transaction
+    - account_holder_name
+    - account_id
+    - account_name
+    - account_number
+    - additional_key
+    - address_description
+    - address_format
+    - address_id
+    - address_index

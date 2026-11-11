@@ -1,0 +1,57 @@
+aid: common-crypto-wallets
+name: Crypto Wallets
+type: Common
+description: 'The common Crypto Wallets vocabulary, distilled from the harvested OpenAPI of 345 providers in APIs.io:
+  shared operations, JSON Schema per concept with measured adoption, and a crosswalk from the common names to each
+  provider''s own.'
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+- Application Programming Interface
+- API
+- Wallets
+- Digital Assets
+- Stablecoins
+- Custody
+- Common Schema
+created: '2026-11-10'
+modified: '2026-11-10'
+url: https://raw.githubusercontent.com/api-commons/crypto-wallets/main/apis.yml
+specificationVersion: '0.20'
+apis:
+- aid: common-crypto-wallets:crypto-wallets
+  name: Common Crypto Wallets Interface
+  description: The Crypto Wallets interface the market already shares, measured.
+  humanURL: https://github.com/api-commons/crypto-wallets
+  tags:
+  - Wallets
+  - Digital Assets
+  properties:
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/api-commons/crypto-wallets/main/openapi.yml
+  - type: Profile
+    url: https://raw.githubusercontent.com/api-commons/crypto-wallets/main/profile.yml
+  - type: Adopters
+    url: https://raw.githubusercontent.com/api-commons/crypto-wallets/main/adopters.yml
+  - type: Rules
+    url: https://raw.githubusercontent.com/api-commons/schema-commons/main/ruleset/schema-commons-naming.yaml
+  - type: JSONSchema
+    name: wallet
+    url: https://raw.githubusercontent.com/api-commons/crypto-wallets/main/schema/wallet.json
+  - type: JSONSchema
+    name: wallet_address
+    url: https://raw.githubusercontent.com/api-commons/crypto-wallets/main/schema/wallet_address.json
+  - type: JSONSchema
+    name: wallet_balance
+    url: https://raw.githubusercontent.com/api-commons/crypto-wallets/main/schema/wallet_balance.json
+  - type: JSONSchema
+    name: wallet_transaction
+    url: https://raw.githubusercontent.com/api-commons/crypto-wallets/main/schema/wallet_transaction.json
+  - type: JSONSchema
+    name: token
+    url: https://raw.githubusercontent.com/api-commons/crypto-wallets/main/schema/token.json
+common:
+- type: License
+  url: https://raw.githubusercontent.com/api-commons/crypto-wallets/main/LICENSE
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

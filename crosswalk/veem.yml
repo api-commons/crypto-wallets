@@ -1,0 +1,20 @@
+provider: veem
+apis_io: https://apis.io/providers/veem/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallets
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/veem-api-openapi.yml#GET /veem/v1.2/wallets
+    - openapi/_original/veem-api-openapi.yml#GET /veem/v1.2/wallets/{walletId}
+  wallet_transaction:
+    path_segment:
+    - transactions
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/veem-api-openapi.yml#GET /veem/v1.2/crypto-wallet/transactions/{fundingMethodId}

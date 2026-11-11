@@ -1,0 +1,27 @@
+provider: tesseract
+apis_io: https://apis.io/providers/tesseract/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - vaults
+    properties:
+      address: address
+      chain: chainId
+      asset: asset
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/tesseract-public-api-openapi.json#GET /clients/{client}/vaults
+    - openapi/_original/tesseract-public-api-openapi.json#GET /vaults/{vault}
+  wallet_transaction:
+    path_segment:
+    - transactions
+    properties:
+      direction: type
+      tx_hash: hash
+      from_address: from
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/tesseract-public-api-openapi.json#GET /clients/{client}/transactions
+    - openapi/_original/tesseract-public-api-openapi.json#GET /vaults/{vault}/transactions

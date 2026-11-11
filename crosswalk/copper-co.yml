@@ -1,0 +1,17 @@
+provider: copper-co
+apis_io: https://apis.io/providers/copper-co/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallets
+    properties:
+      id: walletId
+      created_at: createdAt
+      asset: currency
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/copper-co-platform-openapi.json#GET /wallets
+    - openapi/_original/copper-co-platform-openapi.json#GET /wallets/{walletId}
+    - openapi/_original/copper-co-platform-openapi.json#POST /wallets

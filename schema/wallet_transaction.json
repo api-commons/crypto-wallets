@@ -1,0 +1,189 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/crypto-wallets/main/schema/wallet_transaction.json",
+  "title": "Wallet Transaction",
+  "description": "The common wallet_transaction in Crypto Wallets, distilled from 52 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.673,
+      "x-commons-providers": 35,
+      "x-commons-spellings": [
+        "status",
+        "state",
+        "transaction_status",
+        "transactionStatus"
+      ]
+    },
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.635,
+      "x-commons-providers": 33,
+      "x-commons-spellings": [
+        "id",
+        "externalId",
+        "walletId",
+        "wallet_id",
+        "external_id",
+        "uuid"
+      ]
+    },
+    "direction": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.596,
+      "x-commons-providers": 31,
+      "x-commons-spellings": [
+        "type",
+        "direction",
+        "transaction_type",
+        "transactionType",
+        "kind",
+        "operation",
+        "@type"
+      ]
+    },
+    "tx_hash": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.538,
+      "x-commons-providers": 28,
+      "x-commons-spellings": [
+        "hash",
+        "transactionHash",
+        "txHash",
+        "txId",
+        "txid",
+        "tx_hash",
+        "blockchainTxId",
+        "transaction_hash"
+      ]
+    },
+    "amount": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.481,
+      "x-commons-providers": 25,
+      "x-commons-spellings": [
+        "amount",
+        "quantity",
+        "qty"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.481,
+      "x-commons-providers": 25,
+      "x-commons-spellings": [
+        "createdAt",
+        "created_at",
+        "createTime",
+        "created-at",
+        "createdDate",
+        "dateCreated",
+        "create_date"
+      ],
+      "format": "date-time"
+    },
+    "asset": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.462,
+      "x-commons-providers": 24,
+      "x-commons-spellings": [
+        "currency",
+        "token",
+        "asset",
+        "symbol",
+        "assetId",
+        "coin",
+        "asset_id",
+        "currencyCode"
+      ]
+    },
+    "from_address": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.423,
+      "x-commons-providers": 22,
+      "x-commons-spellings": [
+        "source",
+        "sender",
+        "fromAddress",
+        "from",
+        "from_address",
+        "source-address",
+        "sourceAddress"
+      ]
+    },
+    "to_address": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.365,
+      "x-commons-providers": 19,
+      "x-commons-spellings": [
+        "to",
+        "destination",
+        "toAddress",
+        "to_address",
+        "recipient",
+        "destinationAddress",
+        "destination_address"
+      ]
+    },
+    "fee": {
+      "type": "object",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.327,
+      "x-commons-providers": 17,
+      "x-commons-spellings": [
+        "fee",
+        "fees",
+        "networkFee",
+        "fee_amount",
+        "feeAmount"
+      ]
+    },
+    "chain": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.269,
+      "x-commons-providers": 14,
+      "x-commons-spellings": [
+        "network",
+        "chainId",
+        "chain",
+        "blockchain",
+        "networkId",
+        "chain_id"
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.269,
+      "x-commons-providers": 14,
+      "x-commons-spellings": [
+        "attributes",
+        "metadata",
+        "labels",
+        "tags"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "crypto-wallets",
+    "concept": "wallet_transaction",
+    "providers": 52,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

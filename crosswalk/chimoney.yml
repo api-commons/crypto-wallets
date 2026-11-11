@@ -1,0 +1,30 @@
+provider: chimoney
+apis_io: https://apis.io/providers/chimoney/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallet
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/chimoney-openapi.json#POST /v0.2.4/payouts/wallet
+  wallet_transaction:
+    path_segment:
+    - transfer
+    - transactions
+    - transaction
+    properties:
+      status: status
+      id: id
+      direction: type
+      from_address: sender
+      fee: fee
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/chimoney-openapi.json#POST /v0.2.4/accounts/transaction
+    - openapi/_original/chimoney-openapi.json#POST /v0.2.4/accounts/transactions
+    - openapi/_original/chimoney-openapi.json#POST /v0.2.4/accounts/transfer
+    - openapi/_original/chimoney-openapi.json#POST /v0.2.4/agents/transactions
+    - openapi/_original/chimoney-openapi.json#POST /v0.2.4/multicurrency-wallets/transfer

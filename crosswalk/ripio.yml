@@ -1,0 +1,38 @@
+provider: ripio
+apis_io: https://apis.io/providers/ripio/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallets
+    properties:
+      address: address
+      chain: network
+      asset: currency_code
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/ripio-trade-openapi.yml#GET /wallets
+  wallet_transaction:
+    path_segment:
+    - withdrawals
+    - deposits
+    properties:
+      status: status
+      id:
+      - id
+      - external_id
+      tx_hash: hash
+      amount: amount
+      created_at: create_date
+      asset: currency_code
+      to_address:
+      - destination_address
+      - destination
+      fee: fee
+      chain: network
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/ripio-trade-openapi.yml#GET /deposits
+    - openapi/_original/ripio-trade-openapi.yml#GET /withdrawals
+    - openapi/_original/ripio-trade-openapi.yml#POST /withdrawals

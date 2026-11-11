@@ -1,0 +1,24 @@
+provider: brick-blue
+apis_io: https://apis.io/providers/brick-blue/
+context: crypto-wallets
+generated: '2026-11-10'
+concepts:
+  wallet:
+    path_segment:
+    - wallet
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/brick-blue-openapi.json#GET /api/v1/wallet/{owner}
+    - openapi/_original/brick-blue-openapi.yml#GET /api/v1/wallet/{owner}
+  wallet_transaction:
+    path_segment:
+    - transactions
+    - withdrawals
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/brick-blue-openapi.json#GET /api/v1/wallet/{owner}/transactions
+    - openapi/_original/brick-blue-openapi.json#GET /api/v1/wallet/{owner}/withdrawals
+    - openapi/_original/brick-blue-openapi.yml#GET /api/v1/wallet/{owner}/transactions
+    - openapi/_original/brick-blue-openapi.yml#GET /api/v1/wallet/{owner}/withdrawals
